@@ -9,7 +9,7 @@ const NavBar = ({isLoggedIn, onLogout, onLogin}) => {
           <div>
             <Link to={"/"}>
               {" "}
-              <h1 className="text-2xl font-bold">lorem</h1>
+              <h1 className="text-2xl font-bold">OnBoarder</h1>
             </Link>
           </div>
           <ul className="flex flex-row gap-5">

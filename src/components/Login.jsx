@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-const Login = ({ isLoggedIn, onLogout, onLogin }) => {
+const Login = () => {
   return (
     <>
       <div className="w-full min-h-screen bg-gray-50 flex flex-col sm:justify-center items-center pt-6 sm:pt-0">
@@ -51,7 +51,6 @@ const Login = ({ isLoggedIn, onLogout, onLogin }) => {
             <div className="mt-6">
               <button
                 className="w-full inline-flex items-center justify-center px-4 py-2 bg-green-600 border border-transparent rounded-md font-semibold capitalize text-white hover:bg-green-700 active:bg-green-700 focus:outline-none focus:border-green-700 focus:ring focus:ring-green-200 disabled:opacity-25 transition cursor-pointer"
-                onClick={onLogout}
               >
                 Sign In
               </button>
