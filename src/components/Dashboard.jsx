@@ -113,7 +113,7 @@ const Dashboard = () => {
                 return (
                   <div
                     key={c.id}
-                    className="bg-white shadow-lg rounded-xl p-6 min-h-56 flex flex-col justify-between hover:shadow-2xl transition-shadow border border-gray-100"
+                    className="bg-white shadow-lg rounded-xl p-6 min-h-56 flex flex-col justify-between hover:shadow-2xl transition-shadow border border-gray-100 cursor-pointer"
                   >
                     <div>
                       <h1 className="font-semibold text-xl text-gray-800 mb-2">{c.cardName}</h1>

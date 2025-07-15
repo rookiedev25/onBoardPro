@@ -11,15 +11,14 @@ import GoodBye from "./components/GoodBye";
 const App = () => {
   const [loggedStatus, setLoggedInStatus] = useState(false);
  
-  // const [token, setToken] = useState();
+  const [token, setToken] = useState();
 
-  // if (!token) {
-  //   return <Login setToken={setToken} />;
-  // }
+  if (!token) {
+    return <Login setToken={setToken} />;
+  }
 
   const loginHandler = () => {
     setLoggedInStatus(true);
-    // console.log(loggedStatus)
   };
   
   const logoutHandler = () => {
