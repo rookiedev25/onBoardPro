@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { data, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import PropTypes from 'prop-types'
 
 async function loginUser(credentials) {
