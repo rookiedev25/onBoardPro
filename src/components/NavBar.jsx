@@ -1,11 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 // import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 const NavBar = () => {
   return (
     <>
       <nav className="bg-black text-white flex flex-row items-center justify-around py-4 absolute w-full gap-28 z-10">
+        <NavLink to="/Home" activeClassName="active">
+          OnBoardPro
+        </NavLink>
+        <div className="flex flex-row gap-3">
+          <NavLink to="/about" activeClassName="active">
+            About
+            </NavLink>
+            <NavLink to="/contact" activeClassName="active">
+              Contact
+            </NavLink>
+        </div>
+      </nav>
+
+      {/* <nav className="bg-black text-white flex flex-row items-center justify-around py-4 absolute w-full gap-28 z-10">
         <div>
           <Link to={"/"}>
             {" "}
@@ -18,38 +33,8 @@ const NavBar = () => {
               About{" "}
             </li>
           </Link>
-          {/* <Link to={"/goodbye"}>
-              <button
-                className="text-l hover:font-bold transition-all cursor-pointer bg-white text-black px-2 rounded py-0.5"
-                onClick={onLogout}
-              >
-                <p>Logout</p>
-              </button>
-            </Link> */}
-
-          {/** show logout button when user is logged in  */}
-          {/* {isLoggedIn && (
-              <Link to={"/goodbye"}>
-                <button
-                  className="text-l hover:font-bold transition-all cursor-pointer bg-white text-black px-2 rounded py-0.5"
-                  onClick={onLogout}
-                >
-                  <p>Logout</p>
-                </button>
-              </Link>
-            )}
-            {!isLoggedIn && (
-              <Link to={"/login"}>
-                <button
-                  className="text-l hover:font-bold transition-all cursor-pointer bg-black border-white border-1 px-2.5 rounded py-0.5"
-                  onClick={onLogin}
-                >
-                  Login
-                </button>
-              </Link>
-            )} */}
         </ul>
-      </nav>
+      </nav> */}
     </>
   );
 };

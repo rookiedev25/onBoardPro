@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import NavBar from "./components/NavBar";
 import HomePage from "./components/HomePage";
 import {Routes, Route} from "react-router-dom";
@@ -34,8 +34,8 @@ const App = () => {
       />
         <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        {/* <Route path="/login" element={<Login />} /> */}
+        {/* <Route path="/register" element={<Register />} /> */}
         <Route path="/about" element={<About />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/goodbye" element={<GoodBye />} />

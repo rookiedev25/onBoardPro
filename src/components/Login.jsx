@@ -1,31 +1,31 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 
-async function loginUser(credentials) {
-  return fetch("http://localhost:8080/login", {
-    method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(credentials)
-  }).then((e) => {
-    return (e.json())
-  });
-}
+// async function loginUser(credentials) {
+//   return fetch("http://localhost:8080/login", {
+//     method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(credentials)
+//   }).then((e) => {
+//     return (e.json())
+//   });
+// }
 
-const Login = ({ isLoggedIn, onLogout, onLogin, setToken }) => {
-  const [username, setUsername] = useState();
-  const [password, setPassword] = useState();
+const Login = () => {
+  // const [username, setUsername] = useState();
+  // const [password, setPassword] = useState();
 
   //submit button handler:
-  const submitButtonHandler = async (e) => {
-    // prevents refresh of page
-    e.preventDefault();
-    try {
-      const userToken = await loginUser({ username, password });
-      console.log(userToken);
-      setToken(userToken);
-    } catch (error) {
-      console.error('Login failed:', error);
-    }
-  }
+  // const submitButtonHandler = async (e) => {
+  //   // prevents refresh of page
+  //   e.preventDefault();
+  //   try {
+  //     const userToken = await loginUser({ username, password });
+  //     console.log(userToken);
+  //     setToken(userToken);
+  //   } catch (error) {
+  //     console.error('Login failed:', error);
+  //   }
+  // }
   
 
   return (
@@ -35,15 +35,15 @@ const Login = ({ isLoggedIn, onLogout, onLogin, setToken }) => {
           <h2 className="mb-12 text-center text-5xl font-extrabold">
             Welcome.
           </h2>
-          <form onSubmit={submitButtonHandler}>
+          <form>
             <div className="mb-4">
               <label className="block mb-1" htmlFor="email">
                 Email-Address
               </label>
               <input
-                onChange={(e) => {
-                  return setUsername(e.target.value);
-                }}
+                // onChange={(e) => {
+                //   return setUsername(e.target.value);
+                // }}
                 type="text"
                 className="py-2 px-3 border border-gray-300 focus:border-green-600 focus:outline-none focus:ring focus:ring-green-100 focus:ring-opacity-50 rounded-md shadow-sm disabled:bg-gray-100 mt-1 block w-full"
               />
@@ -53,9 +53,9 @@ const Login = ({ isLoggedIn, onLogout, onLogin, setToken }) => {
                 Password
               </label>
               <input
-                onChange={(e) => {
-                  return setPassword(e.target.value);
-                }}
+                // onChange={(e) => {
+                //   return setPassword(e.target.value);
+                // }}
                 type="password"
                 className="py-2 px-3 border border-gray-300 focus:border-green-600 focus:outline-none focus:ring focus:ring-green-100 focus:ring-opacity-50 rounded-md shadow-sm disabled:bg-gray-100 mt-1 block w-full"
               />
@@ -96,8 +96,8 @@ const Login = ({ isLoggedIn, onLogout, onLogin, setToken }) => {
   );
 };
 
-Login.propTypes = {
-  setToken: PropTypes.func.isRequired,
-};
+// Login.propTypes = {
+//   setToken: PropTypes.func.isRequired,
+// };
 
 export default Login;
