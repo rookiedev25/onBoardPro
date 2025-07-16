@@ -9,35 +9,35 @@ import About from "./components/About";
 import GoodBye from "./components/GoodBye";
 
 const App = () => {
-  const [loggedStatus, setLoggedInStatus] = useState(false);
+  // const [loggedStatus, setLoggedInStatus] = useState(false);
  
-  const [token, setToken] = useState();
+  // const [token, setToken] = useState();
 
-  if (!token) {
-    return <Login setToken={setToken} />;
-  }
+  // if (!token) {
+  //   return <Login setToken={setToken} />;
+  // }
 
-  const loginHandler = () => {
-    setLoggedInStatus(true);
-  };
+  // const loginHandler = () => {
+  //   setLoggedInStatus(true);
+  // };
   
-  const logoutHandler = () => {
-    setLoggedInStatus(false);
-  };
+  // const logoutHandler = () => {
+  //   setLoggedInStatus(false);
+  // };
 
   return (
     <>
       <NavBar
-        isLoggedIn={loggedStatus}
-        onLogout={logoutHandler}
-        onLogin={loginHandler}
+        // isLoggedIn={loggedStatus}
+        // onLogout={logoutHandler}
+        // onLogin={loginHandler}
       />
         <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/about" element={<About />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/goodbye" element={<GoodBye />} />
         </Routes>
     </>

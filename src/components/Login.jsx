@@ -10,8 +10,7 @@ async function loginUser(credentials) {
   });
 }
 
-
-const Login = ({ setToken }) => {
+const Login = ({ isLoggedIn, onLogout, onLogin, setToken }) => {
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
 
@@ -78,7 +77,8 @@ const Login = ({ setToken }) => {
               </div>
             </div>
             <div className="mt-6">
-              <button className="w-full inline-flex items-center justify-center px-4 py-2 bg-green-600 border border-transparent rounded-md font-semibold capitalize text-white hover:bg-green-700 active:bg-green-700 focus:outline-none focus:border-green-700 focus:ring focus:ring-green-200 disabled:opacity-25 transition cursor-pointer">
+              <button
+                className="w-full inline-flex items-center justify-center px-4 py-2 bg-green-600 border border-transparent rounded-md font-semibold capitalize text-white hover:bg-green-700 active:bg-green-700 focus:outline-none focus:border-green-700 focus:ring focus:ring-green-200 disabled:opacity-25 transition cursor-pointer">
                 Sign In
               </button>
             </div>
