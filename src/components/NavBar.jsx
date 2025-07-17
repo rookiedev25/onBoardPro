@@ -7,16 +7,16 @@ const NavBar = () => {
   return (
     <>
       <nav className="bg-black text-white flex flex-row items-center justify-around py-4 absolute w-full gap-28 z-10">
-        <NavLink to="/Home" activeClassName="active">
+        <NavLink to="/" activeclassname="active">
           OnBoardPro
         </NavLink>
         <div className="flex flex-row gap-3">
-          <NavLink to="/about" activeClassName="active">
+          <NavLink to="/about" activeclassname="active">
             About
-            </NavLink>
-            <NavLink to="/contact" activeClassName="active">
-              Contact
-            </NavLink>
+          </NavLink>
+          <NavLink to="/contact" activeclassname="active">
+            Contact
+          </NavLink>
         </div>
       </nav>
 
