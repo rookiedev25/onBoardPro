@@ -34,11 +34,7 @@ const App = () => {
   return (
     <>
       <CardsProvider>
-        <NavBar
-          // isLoggedIn={loggedStatus}
-          // onLogout={logoutHandler}
-          // onLogin={loginHandler}
-        />
+        <NavBar />
         <Routes>
         <Route path="/" element={<HomePage />} />
         {/* <Route path="/login" element={<Login />} /> */}

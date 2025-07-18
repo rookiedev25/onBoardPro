@@ -6,17 +6,17 @@ import { NavLink } from "react-router-dom";
 const NavBar = () => {
   return (
     <>
-      <nav className="bg-black text-white flex flex-row items-center justify-around py-4 absolute w-full gap-28 z-10">
-        <NavLink to="/" activeclassname="active">
+      <nav className="bg-black text-white flex flex-row items-center justify-around py-4 absolute w-full gap-15 z-10">
+        <NavLink to="/" activeclassname="active" className='text-2xl font-bold'>
           OnBoardPro
         </NavLink>
-        <div className="flex flex-row gap-3">
-          <NavLink to="/about" activeclassname="active">
+        <div className="flex flex-row gap-5">
+          <NavLink to="/about" activeclassname="active" className='text-lg'>
             About
           </NavLink>
-          <NavLink to="/contact" activeclassname="active">
+          {/* <NavLink to="/contact" activeclassname="active" className='text-lg'>
             Contact
-          </NavLink>
+          </NavLink> */}
         </div>
       </nav>
 

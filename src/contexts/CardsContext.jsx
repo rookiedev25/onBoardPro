@@ -124,7 +124,7 @@ export const CardsProvider = ({ children }) => {
           progress: "25",
         },
         ],
-        ticketManagement: [
+    ticketManagement: [
             {
               id: 1,
               cardName: "RTC-JAZZ",

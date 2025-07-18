@@ -10,7 +10,7 @@ const Card = ({ card, variant = "default" }) => {
     const baseStyles =
           "bg-white shadow-md rounded-lg p-4 flex items-center justify-center hover:shadow-lg transition-shadow duration-300 cursor-pointer";
 
-    switch (variant) {
+    switch (variant || card.style) {
       case "threeByThreeCards":
         return `${baseStyles} h-80 w-90`;
       case "twoByTwoCards":

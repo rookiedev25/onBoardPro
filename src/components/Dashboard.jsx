@@ -78,8 +78,12 @@ const Dashboard = () => {
           <h1 className="text-3xl font-semibold">Hello User,</h1>
           <p className="text-xl font-light">Today is {formattedDate}</p>
         </div>
-        <div className="cards flex justify-center">
-          <CardsGrid type="dashboard" variant="threeByThreeCards" gridCols={3} />
+              <div className="cards flex justify-center">
+                  <CardsGrid
+                      type="dashboard"
+                      variant="threeByThreeCards"
+                      gridCols={3}
+                  />
         </div>
       </div>
     </>
