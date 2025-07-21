@@ -21,11 +21,12 @@ export const CardsProvider = ({ children }) => {
           style: "twoByTwoCards",
         },
       ],
+
       dashboard: [
         {
           id: 1,
           cardName: "Meet the Team",
-          routePath: "/about",
+          routePath: "/meet-the-team",
           style: "threeByThreeCards",
         },
         {
@@ -63,6 +64,7 @@ export const CardsProvider = ({ children }) => {
         {
           id: 1,
           cardName: "SET-1",
+          cardDescription: "Introduction to ST4 and XMetal",
           routePath: "/training-essentials/set-1",
           style: "threeByThreeCards",
           progress: "20",
@@ -70,6 +72,7 @@ export const CardsProvider = ({ children }) => {
         {
           id: 2,
           cardName: "SET-2",
+          cardDescription: "Working with ST4 and XMetal",
           routePath: "/training-essentials/set-2",
           style: "threeByThreeCards",
           progress: "50",
@@ -77,6 +80,7 @@ export const CardsProvider = ({ children }) => {
         {
           id: 3,
           cardName: "SET-3",
+          cardDescription: "Working with types of Graphics",
           routePath: "/training-essentials/set-3",
           style: "threeByThreeCards",
           progress: "90",
@@ -84,6 +88,7 @@ export const CardsProvider = ({ children }) => {
         {
           id: 4,
           cardName: "SET-4",
+          cardDescription: "Working with Fragments",
           routePath: "/training-essentials/set-4",
           style: "threeByThreeCards",
           progress: "60",
@@ -91,6 +96,7 @@ export const CardsProvider = ({ children }) => {
         {
           id: 5,
           cardName: "SET-5",
+          cardDescription: "Working with Projects and Production in ST4",
           routePath: "/training-essentials/set-5",
           style: "threeByThreeCards",
           progress: "35",
@@ -98,6 +104,7 @@ export const CardsProvider = ({ children }) => {
         {
           id: 6,
           cardName: "SET-6",
+          cardDescription: "Working with Contextual Help",
           routePath: "/training-essentials/set-6",
           style: "threeByThreeCards",
           progress: "70",
@@ -105,91 +112,79 @@ export const CardsProvider = ({ children }) => {
         {
           id: 7,
           cardName: "SET-7",
+          cardDescription: "Editorial Review Process",
           routePath: "/training-essentials/set-7",
           style: "threeByThreeCards",
           progress: "45",
         },
-        {
-          id: 8,
-          cardName: "SET-8",
-          routePath: "/training-essentials/set-8",
-          style: "threeByThreeCards",
-          progress: "80",
-        },
-        {
-          id: 9,
-          cardName: "SET-9",
-          routePath: "/training-essentials/set-9",
-          style: "threeByThreeCards",
-          progress: "25",
-        },
-        ],
-    ticketManagement: [
-            {
-              id: 1,
-              cardName: "RTC-JAZZ",
-              routePath: "/ticket-management/rtc-jazz",
-              style: "twoByTwoCards",
-            },
-            {
-                id: 2,
-                cardName: "JIRA",
-                routePath: "/ticket-management/jira",
-                style: "twoByTwoCards",
-            }
-        ],
-        faqs: [
-            {
-                id: 1,
-                cardName: "General FAQs",
-                routePath: "/faqs/general",
-                style: "faqs"
-            }
-            
       ],
-        graphicTools: [
-            {
-                id: 1,
-                cardName: "SnagIT",
-                routePath: "/graphic-tools/snag-it",
-                style: "twoByTwoCards"
-            },
-            {
-                id: 2,
-                cardName: "Visio",
-                routePath: "/graphic-tools/visio",
-                style: "twoByTwoCards"
-            },
-            {
-                id: 3,
-                cardName: "ScreenToGIF",
-                routePath: "/graphic-tools/screen-to-gif",
-                style: "twoByTwoCards"
-            }, {
-                id: 4,
-                cardName: "Camtasia",
-                routePath: "/graphic-tools/camtasia",
-                style: "twoByTwoCards"
-            }
-        ],
-        guidelines: [
-            {
-              id: 1,
-              cardName: "CPS StyleGuide",
-                routePath: "/guidelines/cps",
-              style: "twoByTwoCards"
-            },
-            {
-                id: 2,
-                cardName: "Confluence",
-                routePath: "/guidelines/confluence",
-                style: "twoByTwoCards"
-            },{
-                id: 3,
-                cardName: "Wiki",
-                routePath: "/guidelines/wiki",
-                style: "twoByTwoCards"
-            }
+      ticketManagement: [
+        {
+          id: 1,
+          cardName: "RTC-JAZZ",
+          routePath: "/ticket-management/rtc-jazz",
+          style: "twoByTwoCards",
+        },
+        {
+          id: 2,
+          cardName: "JIRA",
+          routePath: "/ticket-management/jira",
+          style: "twoByTwoCards",
+        },
+      ],
+      faqs: [
+        {
+          id: 1,
+          cardName: "General FAQs",
+          routePath: "/faqs/general",
+          style: "faqs",
+        },
+      ],
+      graphicTools: [
+        {
+          id: 1,
+          cardName: "SnagIT",
+          routePath: "/graphic-tools/snag-it",
+          style: "twoByTwoCards",
+        },
+        {
+          id: 2,
+          cardName: "Visio",
+          routePath: "/graphic-tools/visio",
+          style: "twoByTwoCards",
+        },
+        {
+          id: 3,
+          cardName: "ScreenToGIF",
+          routePath: "/graphic-tools/screen-to-gif",
+          style: "twoByTwoCards",
+        },
+        {
+          id: 4,
+          cardName: "Camtasia",
+          routePath: "/graphic-tools/camtasia",
+          style: "twoByTwoCards",
+        },
+      ],
+      guidelines: [
+        {
+          id: 1,
+          cardName: "CPS StyleGuide",
+          routePath: "/guidelines/cps",
+          style: "twoByTwoCards",
+        },
+        {
+          id: 2,
+          cardName: "Confluence",
+          routePath: "/guidelines/confluence",
+          style: "twoByTwoCards",
+        },
+        {
+          id: 3,
+          cardName: "Wiki",
+          routePath: "/guidelines/wiki",
+          style: "twoByTwoCards",
+        },
       ],
     });
 

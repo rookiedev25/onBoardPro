@@ -5,37 +5,47 @@ import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
   return (
-    <>
-      <nav className="bg-black text-white flex flex-row items-center justify-around py-4 absolute w-full gap-15 z-10">
-        <NavLink to="/" activeclassname="active" className='text-2xl font-bold'>
-          OnBoardPro
+    <nav className="bg-black text-white shadow-lg flex items-center justify-between px-10 py-4 fixed top-0 left-0 w-full z-20 backdrop-blur-md">
+      <NavLink
+        to="/"
+        className="text-3xl font-extrabold tracking-tight"
+      >
+        OnBoardPro
+      </NavLink>
+      <div className="flex gap-8">
+        <NavLink
+          to="https://github.com/rookiedev25"
+          target="_blank"
+          className="text-md font-thin px-4 py-2 transition-all duration-200 hover:font-bold border rounded-xl"
+        >
+          GitHub
         </NavLink>
-        <div className="flex flex-row gap-5">
-          <NavLink to="/about" activeclassname="active" className='text-lg'>
-            About
-          </NavLink>
-          {/* <NavLink to="/contact" activeclassname="active" className='text-lg'>
-            Contact
-          </NavLink> */}
-        </div>
-      </nav>
-
-      {/* <nav className="bg-black text-white flex flex-row items-center justify-around py-4 absolute w-full gap-28 z-10">
-        <div>
-          <Link to={"/"}>
-            {" "}
-            <h1 className="text-2xl font-bold">OnBoardPro</h1>
-          </Link>
-        </div>
-        <ul className="flex flex-row gap-5">
-          <Link to={"/about"}>
-            <li className="text-xl font-thin px-2 py-0.5 hover:font-medium transition-all cursor-pointer">
-              About{" "}
-            </li>
-          </Link>
-        </ul>
-      </nav> */}
-    </>
+        {/* <NavLink
+          to="/about"
+          className={({ isActive }) =>
+            `text-lg font-medium px-4 py-2 transition-all duration-200 border-1 ${
+              isActive
+                ? "bg-white bg-opacity-10 text-black shadow-md rounded-xl"
+                : "hover:bg-white hover:bg-opacity-5 rounded-xl transition-colors duration-200"
+            }`
+          }
+        >
+          About
+        </NavLink> */}
+        {/* <NavLink
+          to="/contact"
+          className={({ isActive }) =>
+            `text-lg font-medium px-4 py-2 transition-all duration-200 ${
+              isActive
+                ? "bg-white bg-opacity-10 text-pink-400 shadow-md"
+                : "hover:bg-white hover:bg-opacity-5 hover:text-indigo-200"
+            }`
+          }
+        >
+          Contact
+        </NavLink> */}
+      </div>
+    </nav>
   );
 };
 

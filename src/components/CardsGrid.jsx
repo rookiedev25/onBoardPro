@@ -9,7 +9,17 @@ const CardsGrid = ({ type, variant = "default", gridCols = 3 }) => {
   const cards = cardsData[type] || [];
 
   const getGridStyles = () => {
-    return `grid grid-cols-${gridCols} gap-6 w-fit`;
+    // Use predefined Tailwind classes
+    const gridColsMap = {
+      1: "grid-cols-1",
+      2: "grid-cols-2", 
+      3: "grid-cols-3",
+      4: "grid-cols-4",
+      5: "grid-cols-5",
+      6: "grid-cols-6"
+    };
+    
+    return `grid ${gridColsMap[gridCols] || "grid-cols-3"} gap-6 w-fit`;
   };
 
   return (

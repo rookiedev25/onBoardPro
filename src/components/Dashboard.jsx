@@ -73,17 +73,29 @@ const Dashboard = () => {
 
   return (
     <>
-      <div className="flex flex-col items-left py-20 min-h-screen bg-gray-100">
-        <div className="greetingContainer ml-100 flex flex-col items-left gap-2 mb-10">
-          <h1 className="text-3xl font-semibold">Hello User,</h1>
-          <p className="text-xl font-light">Today is {formattedDate}</p>
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 flex flex-col items-center py-16 px-4">
+        <img
+          src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+          alt="Technical Documentation Background"
+          className="absolute inset-0 w-full h-full object-cover opacity-20 -z-0"
+        />
+        <div className="w-full max-w-5xl bg-white rounded-3xl shadow-xl p-10 mb-7 mt-7 flex flex-col items-start gap-4 z-2">
+          <h1 className="text-4xl font-bold text-gray-800 mb-2 tracking-tight">
+            Welcome back, <span className="text-blue-600">Gouranga</span>
+          </h1>
+          <p className="text-lg text-gray-500 font-medium">
+            <span className="inline-block bg-blue-100 text-blue-700 px-3 py-1 rounded-full mr-2">
+              {formattedDate}
+            </span>
+            Hope you have a productive day!
+          </p>
         </div>
-              <div className="cards flex justify-center">
-                  <CardsGrid
-                      type="dashboard"
-                      variant="threeByThreeCards"
-                      gridCols={3}
-                  />
+        <div className="">
+          <CardsGrid
+            type="dashboard"
+            variant="threeByThreeCards"
+            gridCols={3}
+          />
         </div>
       </div>
     </>
