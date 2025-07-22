@@ -15,6 +15,7 @@ import GraphicTools from "./components/GraphicTools";
 import Guidelines from "./components/Guidelines";
 import MeetTheTeam from "./components/MeetTheTeam";
 import FAQs from "./components/FAQs";
+import { useState } from "react";
 
 const App = () => {
   // const [loggedStatus, setLoggedInStatus] = useState(false);
@@ -33,6 +34,11 @@ const App = () => {
   //   setLoggedInStatus(false);
   // };
 
+  // prop-drill to dashboard to fetch and show username
+  const [firstName, setFirstName] = useState("");
+
+
+
   return (
     <>
       <CardsProvider>
@@ -42,7 +48,7 @@ const App = () => {
           {/* <Route path="/login" element={<Login />} /> */}
           {/* <Route path="/register" element={<Register />} /> */}
           {/* <Route path="/about" element={<About />} /> */}
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard" element={<Dashboard username={firstName} />} />
           <Route path="/meet-the-team" element={<MeetTheTeam />} />
           <Route path="/goodbye" element={<GoodBye />} />
           <Route path="/training" element={<Training />} />

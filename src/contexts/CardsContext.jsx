@@ -131,6 +131,12 @@ export const CardsProvider = ({ children }) => {
           routePath: "/ticket-management/jira",
           style: "twoByTwoCards",
         },
+        {
+          id: 3,
+          cardName: "Git",
+          routePath: "/guidelines/git",
+          style: "twoByTwoCards",
+        },
       ],
       faqs: [
         {
@@ -181,7 +187,7 @@ export const CardsProvider = ({ children }) => {
         },
         {
           id: 3,
-          cardName: "Wiki",
+          cardName: "Wiki Page",
           routePath: "/guidelines/wiki",
           style: "twoByTwoCards",
         },

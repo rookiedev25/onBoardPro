@@ -6,15 +6,19 @@ const MeetTheTeam = () => {
     {
       writers: [
         {
+          name: "Vignesh Rajamohan",
+          region: "Bengaluru",
+          projects: ["Powermanager"],
+        },
+        {
+          name: "Monica Tiwari",
+          region: "Bengaluru",
+          projects: ["Powermanager", "Power Device Engineer", "DIGSI"],
+        },
+        {
           name: "Alice Phumale",
           region: "Pune",
-          projects: [
-            "System One",
-            "ABT Site",
-            "ABT Pro",
-            "Branch Office Server (BOS)",
-            "Desigo Modernization Utility (DMU)",
-          ],
+          projects: ["System One"],
         },
         {
           name: "Yogesh Andar",
@@ -42,7 +46,7 @@ const MeetTheTeam = () => {
         {
           name: "Gouranga Bhattacherjee",
           linkedIn: "https://www.linkedin.com/in/gourangabhattacherjee/",
-          teams: '',
+          teams: "",
           region: "Pune",
           projects: ["Desigo CC"],
         },
@@ -70,16 +74,6 @@ const MeetTheTeam = () => {
           name: "Deepali Malewadi",
           region: "Pune",
           projects: [],
-        },
-        {
-          name: "Vignesh Rajamohan",
-          region: "Bengaluru",
-          projects: ["Powermanager"],
-        },
-        {
-          name: "Monica Tiwari",
-          region: "Bengaluru",
-          projects: ["Powermanager", "Power Device Engineer", "DIGSI"],
         },
         {
           name: "Padmini L",

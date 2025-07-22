@@ -8,7 +8,7 @@ const TicketManagement = () => {
         <CardsGrid
           type="ticketManagement"
           variant="twoByTwoCards"
-          gridCols={2}
+          gridCols={3}
         />
       </div>
     </>

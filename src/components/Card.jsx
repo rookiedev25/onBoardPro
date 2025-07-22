@@ -28,7 +28,7 @@ const Card = ({ card, variant = "default" }) => {
     // Simulate loading delay
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 1200);
+    }, 1000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -56,7 +56,7 @@ const Card = ({ card, variant = "default" }) => {
               <img src={card.icon} alt="" className="h-12 w-12 object-contain drop-shadow-xl" />
             </div>
           )}
-          <h2 className="text-xl font-extrabold text-black-xl group-hover:text-blue-700 transition-colors duration-200">
+          <h2 className="text-xl font-bold text-black-xl group-hover:text-blue-700 transition-colors duration-200">
             {card.cardName}
           </h2>
           <p className="text-lg font-light max-w-120 text-center">{card.cardDescription}</p>
