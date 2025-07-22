@@ -3,9 +3,9 @@ import { Link, useNavigate } from "react-router-dom";
 // import demoImage from "../../public/caraousel"
 
 
-const HomePage = ({ username }) => {
+const HomePage = () => {
 
-  const [firstName, setFirstName] = useState("user@siemens.com");
+  const [firstName, setFirstName] = useState("gouranga@siemens.com");
 
   const navigator = useNavigate();
 

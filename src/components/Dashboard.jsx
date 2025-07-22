@@ -83,11 +83,11 @@ const Dashboard = ({ username }) => {
   return (
     <>
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 flex flex-col items-center py-16 px-4">
-        {/* <img
-          src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+        <img
+          // src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
           alt="Technical Documentation Background"
           className="absolute inset-0 w-full h-full object-cover opacity-20 -z-0"
-        /> */}
+        />
 
         <div className="w-full max-w-5xl bg-white rounded-3xl shadow-xl p-10 mb-7 mt-7 flex flex-col items-start gap-4 z-2">
           <h1 className="text-4xl font-bold text-gray-800 mb-2 tracking-tight">
@@ -101,9 +101,9 @@ const Dashboard = ({ username }) => {
           </p>
         </div>
 
-        <div className="caraouselContainer w-full max-w-6xl rounded-3xl shadow-xl px-5 py-3 mb-7 mt-7 flex flex-row gap-4 z-10 justify-center items-center bg-black">
+        <div className="caraouselContainer w-full max-w-6xl max-h-screen rounded-3xl shadow-xl px-5 py-3 mb-7 flex flex-row gap-4 z-10 justify-center items-center bg-black">
           <button
-            className="leftButton z-3 bg-gray-300 text-black rounded-full h-20 w-20 p-2 cursor-pointer"
+            className="leftButton z-3 bg-gray-300 text-black rounded-full h-17 p-2 cursor-pointer hover:bg-white transition-colors"
             onClick={handleScrollLeft}
           >
             &lt;
@@ -117,11 +117,11 @@ const Dashboard = ({ username }) => {
                 key={idx}
                 src={img}
                 alt={`carousel-${idx}`}
-                className="rounded-xl shadow-md w-248 h-92 object-cover"
+                className="rounded-xl shadow-md max-w-300 max-h-150 object-cover"
               />
             ))}
           </div>
-          <button className="rightButton z-3 bg-gray-300 text-black rounded-full h-20 w-20 p-2 cursor-pointer"
+          <button className="rightButton z-3 bg-gray-300 text-black rounded-full h-17 p-2 cursor-pointer hover:bg-white"
           onClick={handleScrollRight}>
             &gt;
           </button>
