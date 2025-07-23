@@ -16,6 +16,7 @@ import Guidelines from "./components/Guidelines";
 import MeetTheTeam from "./components/MeetTheTeam";
 import FAQs from "./components/FAQs";
 import { useState } from "react";
+import TrainingModules from "./components/TrainingModules";
 
 const App = () => {
   // const [loggedStatus, setLoggedInStatus] = useState(false);
@@ -48,11 +49,18 @@ const App = () => {
           {/* <Route path="/login" element={<Login />} /> */}
           {/* <Route path="/register" element={<Register />} /> */}
           {/* <Route path="/about" element={<About />} /> */}
-          <Route path="/dashboard" element={<Dashboard username={firstName} />} />
+          <Route
+            path="/dashboard"
+            element={<Dashboard username={firstName} />}
+          />
           <Route path="/meet-the-team" element={<MeetTheTeam />} />
           <Route path="/goodbye" element={<GoodBye />} />
           <Route path="/training" element={<Training />} />
           <Route path="/training-essentials" element={<TrainingEssentials />} />
+          <Route
+            path="/training-essentials/set-1"
+            element={<TrainingModules />}
+          />
           <Route path="/graphic-tools" element={<GraphicTools />} />
           <Route path="/ticket-management" element={<TicketManagement />} />
           <Route path="/guidelines" element={<Guidelines />} />

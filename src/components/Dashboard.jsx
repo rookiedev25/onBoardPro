@@ -43,42 +43,7 @@ const Dashboard = ({ username }) => {
     monthNames[date.getMonth()]
   }, ${year}`;
 
-  //adding caraousel images dynamically
-  const carouselImg = [
-    "image1.jpeg",
-    "image2.jpeg",
-    "image3.jpg",
-    "image4.jpg",
-     "image5.jpg",
-     "image6.jpg",
-     "image7.jpeg",
-     "image8.jpeg",
-     "image9.jpeg",
-  ];
-
-  // importing images as per filenames
-  const carouselImages = carouselImg.map((imageName) => {
-    return `../../public/carousel/${imageName}`;
-  });
-
-  console.log(carouselImages);
-
-  // Ref for the image container
-  const imageContainerRef = React.useRef(null);
-
-  // Scroll left handler
-  const handleScrollLeft = () => {
-    if (imageContainerRef.current) {
-      imageContainerRef.current.scrollBy({ left: -300, behavior: "smooth" });
-    }
-  };
-
-  // Scroll right handler
-  const handleScrollRight = () => {
-    if (imageContainerRef.current) {
-      imageContainerRef.current.scrollBy({ left: 300, behavior: "smooth" });
-    }
-  };
+ 
 
   return (
     <>
@@ -101,7 +66,7 @@ const Dashboard = ({ username }) => {
           </p>
         </div>
 
-        <div className="caraouselContainer w-full max-w-6xl max-h-screen rounded-3xl shadow-xl px-5 py-3 mb-7 flex flex-row gap-4 z-10 justify-center items-center bg-black">
+        {/* <div className="caraouselContainer w-full max-w-5xl max-h-screen rounded-3xl shadow-xl px-5 py-3 mb-7 flex flex-row gap-4 z-10 justify-center items-center bg-black">
           <button
             className="leftButton z-3 bg-gray-300 text-black rounded-full h-17 p-2 cursor-pointer hover:bg-white transition-colors"
             onClick={handleScrollLeft}
@@ -125,7 +90,8 @@ const Dashboard = ({ username }) => {
           onClick={handleScrollRight}>
             &gt;
           </button>
-        </div>
+        </div> */}
+        
         <div className="">
           <CardsGrid
             type="dashboard"

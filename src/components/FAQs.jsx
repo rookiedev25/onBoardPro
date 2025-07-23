@@ -1,45 +1,52 @@
 import React from 'react'
 
 const FAQs = () => {
-    const faqs = [
-        {
-            question: "What is the purpose of this dashboard?",
-            answer: "This dashboard helps you monitor and manage your onboarding process efficiently."
-        },
-        {
-            question: "Is my data secure?",
-            answer: "Yes, we use industry-standard security measures to protect your data."
-        },
-        {
-            question: "Who can access the dashboard?",
-            answer: "Only authorized users with valid credentials can access the dashboard."
-        },
-        {
-            question: "Where can I find support?",
-            answer: "You can contact support via the 'Help' section or email us directly."
-        },
-        {
-            question: "How often is the data updated?",
-            answer: "Data is updated in real-time as changes occur."
-        }
-        ,
-        {
-            question: "Can I export dashboard data?",
-            answer: "Yes, you can export data in CSV or PDF format from the dashboard."
-        },
-        {
-            question: "What types of analytics are available?",
-            answer: "The dashboard provides onboarding progress, completion rates, and user activity analytics."
-        },
-        {
-            question: "How do I customize my dashboard view?",
-            answer: "You can filter, sort, and rearrange widgets to personalize your dashboard experience."
-        },
-        {
-            question: "Are notifications available for onboarding tasks?",
-            answer: "This is planned for next version with important updates."
-        }
-    ]
+
+const faqs = [
+    {
+        question: "How long does the onboarding process take?",
+        answer: "Ideally, onboarding takes 1 month, with 1 session per day."
+    },
+    {
+        question: "Where can I get project-related details (Project Training & Duration)?",
+        answer: [
+            "A project lead will conduct your training.",
+            "You should also plan your domain-specific training with your manager/buddy.",
+            "Your project manager or buddy will connect you with a focal point for further guidance."
+        ]
+    },
+    {
+        question: "What internal apps do I need to use? How do I install SnagIt, Visio, or the Windows app?",
+        answer: [
+            "Details about SnagIt and Visio are available in the Drawing Tools card.",
+            "The Windows app can be installed via the Company Portal."
+        ]
+    },
+    {
+        question: "Where can I find internal style guides and templates?",
+        answer: "Your manager or buddy will share the relevant guides and templates with you."
+    },
+    {
+        question: "What is the editorial review process workflow?",
+        answer: [
+            "Information about the editorial review process is available in the Optional section of the Training card.",
+            "Your project specific work flow depends on the work flow followed by the team."
+        ]
+    },
+    {
+        question: "How do I raise concerns or issues to HR or other teams?",
+        answer: [
+            "Reach out to your manager.",
+            "Follow the instructions shared during induction (usually sent to your personal email)."
+        ]
+    },
+    {
+        question: "How do I access community groups or forums?",
+        answer: "You can join internal communities via Yammer."
+    }
+];
+
+   
 return (
     <>
         <div className="max-w-6xl mx-auto mt-20 p-8 bg-white rounded-2xl shadow-lg">
@@ -57,30 +64,21 @@ return (
                             {faq.question}
                         </summary>
                         <div className="mt-3 text-gray-700 text-base leading-relaxed transform transition-all duration-300 ease-in-out">
-                            {faq.answer}
+                            {faq.answer instanceof Array ? (
+                                <ul className="list-disc pl-5 space-y-2">
+                                    {faq.answer.map((line, lineIdx) => (
+                                        <li key={lineIdx}>{line}</li>
+                                    ))}
+                                </ul>
+                            ) : (
+                                <p>{faq.answer}</p>
+                            )}
                         </div>
                     </details>
                 ))}
             </div>
         </div>
-        <style jsx>{`
-            details[open] > summary {
-                margin-bottom: 10px;
-            }
-            details[open] > div {
-                animation: slideDown 0.3s ease-in-out;
-            }
-            @keyframes slideDown {
-                from {
-                    opacity: 0;
-                    transform: translateY(-10px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-        `}</style>
+        
     </>
 )
 }

@@ -10,7 +10,7 @@ const GraphicTools = () => {
           alt="Technical Documentation Background"
           className="absolute inset-0 w-full h-full object-cover opacity-20 z-0"
         />
-        <CardsGrid type="graphicTools" variant="graphicTools" gridCols={2} />
+        <CardsGrid type="graphicTools" variant="twoByTwoCards" gridCols={2} />
       </div>
     </>
   );

@@ -21,7 +21,6 @@ export const CardsProvider = ({ children }) => {
           style: "twoByTwoCards",
         },
       ],
-
       dashboard: [
         {
           id: 1,
@@ -66,7 +65,6 @@ export const CardsProvider = ({ children }) => {
           cardName: "SET-1",
           cardDescription: "Introduction to ST4 and XMetal",
           routePath: "/training-essentials/set-1",
-          style: "threeByThreeCards",
           progress: "20",
         },
         {
@@ -116,6 +114,43 @@ export const CardsProvider = ({ children }) => {
           routePath: "/training-essentials/set-7",
           style: "threeByThreeCards",
           progress: "45",
+        },
+      ],
+      trainingModules: [
+        {
+          id: 1,
+          cardName: "ST4 Introduction",
+          cardDescription: "Introduction to ST4 and its features",
+          link: "https://siemensapc-my.sharepoint.com/:p:/r/personal/yaswanth_sudhi_siemens_com/_layouts/15/Doc.aspx?sourcedoc=%7B82D7D78D-7169-4DA3-BFBE-FED48B433A83%7D&file=01%20ST4%20Introduction%20(1).pptx&action=edit&mobileredirect=true",
+          style: "module",
+        },
+        {
+          id: 2,
+          cardName: "ST4 User Interface",
+          cardDescription: "Understanding the ST4 user interface",
+          link: "https://siemensapc-my.sharepoint.com/:p:/r/personal/yaswanth_sudhi_siemens_com/_layouts/15/Doc.aspx?sourcedoc=%7B48C34168-5F58-4C64-9A5A-7420D5BD313C%7D&file=02%20ST4%20User%20Interface.pptx&action=edit&mobileredirect=true",
+          style: "module",
+        },
+        {
+          id: 3,
+          cardName: "Topic Oriented Writing Basics",
+          cardDescription: "Fundamentals of topic-oriented writing",
+          link: "https://siemensapc-my.sharepoint.com/:p:/r/personal/yaswanth_sudhi_siemens_com/_layouts/15/Doc.aspx?sourcedoc=%7B3F7E3628-E97A-481F-81DA-F923598CCA24%7D&file=08_Topic-oriented%20writing%20basics.pptx&action=edit&mobileredirect=true",
+          style: "module",
+        },
+        {
+          id: 4,
+          cardName: "Getting Started with XMetal",
+          cardDescription: "Introduction to XMetal and its features",
+          link: "https://siemensapc-my.sharepoint.com/:v:/r/personal/yaswanth_sudhi_siemens_com/Documents/On%20Board%20Pro/Trainings%20related%20to%20ST4%20and%20X-metal/Set%201/Getting%20started%20with%20X-metal/1_Getting%20started%20with%20ST4%20using%20XMetal%20by%20Ramkrushna.mp4?csf=1&web=1&e=RQYBRO&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D",
+          style: "module",
+        },
+        {
+          id: 5,
+          cardName: "ST4 Overview",
+          cardDescription: "Overview of ST4 features and functionalities",
+          link: "https://siemensapc-my.sharepoint.com/:v:/r/personal/yaswanth_sudhi_siemens_com/Documents/On%20Board%20Pro/Trainings%20related%20to%20ST4%20and%20X-metal/Set%201/ST4%20Overview/1_ST4%20-%20Introduction%20and%20Overview-20210608_161354-Meeting%20Recording.mp4?csf=1&web=1&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=zyPA0p",
+          style: "module",
         },
       ],
       ticketManagement: [
@@ -211,7 +246,7 @@ export const CardsProvider = ({ children }) => {
         progress,
         updateProgress,
       }}
-    >
+    > 
       {children}
     </CardsContext.Provider>
   );

@@ -17,6 +17,8 @@ const Card = ({ card, variant = "default" }) => {
         return `${baseStyles} h-80 w-90`;
     case "singleCard":
         return `${baseStyles} h-80 w-90`;
+      case "module":
+        return `${baseStyles} h-40 w-250`;
       default:
         return `${baseStyles} h-80 w-90`;
     }
@@ -47,36 +49,62 @@ const Card = ({ card, variant = "default" }) => {
 
   return (
     <Link to={card.routePath} className="card group">
-      <div className={`${getCardStyles()} relative overflow-hidden`}>
+      <div className={`${getCardStyles()} relative overflow-hidden flex flex-row justify-space-between gap-20`}>
         {/* Card content */}
-        <div className="relative z-10 flex flex-col items-center justify-center h-full">
+        <div className="relative z-10 flex flex-col items-center justify-center h-full ">
           {/* Icon or image */}
           {card.icon && (
             <div className="mb-4">
               <img src={card.icon} alt="" className="h-12 w-12 object-contain drop-shadow-xl" />
             </div>
           )}
+          { 
+            (card.link && card.linkText) ? (
+              
+              <a href={card.link} className="text-blue-500 hover:underline">
+                {card.linkText}
+              </a>
+            ) : (
+              true
+            )
+          }
           <h2 className="text-xl font-bold text-black-xl group-hover:text-blue-700 transition-colors duration-200">
             {card.cardName}
           </h2>
           <p className="text-lg font-light max-w-120 text-center">{card.cardDescription}</p>
           {/* Progress bar */}
           {card.progress !== undefined && (
-            <div className="mt-6 w-40">
-              <div className="w-full bg-blue-100 rounded-full h-3 shadow-inner">
+            <div className="mt-6 w-40 flex flex-col items-center">
+
+              {/* link to resource */}
+              {/* <button className="bg-blue-700 text-white py-2 px-4 rounded cursor-pointer" onClick={() => window.open(card.link, "_blank")}>Link</button> */}
+
+              {/* Progress bar */}
+              {/* <div className="w-full bg-blue-100 rounded-full h-3 shadow-inner">
                 <div
                   className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-700 h-3 rounded-full transition-all duration-500"
                   style={{ width: `${card.progress}%` }}
                 ></div>
-              </div>
-              <span className="block text-xs text-blue-600 mt-2 text-center font-medium tracking-wide">
-                {card.progress}%
-              </span>
+              </div> */}
+              {/* percentage caculation display here */}
+                {/* <span className="block text-xs text-blue-600 mt-2 text-center font-medium tracking-wide">
+                  {card.progress}%
+                </span> */}
             </div>
           )}
         </div>
         {/* Blue border hover effect */}
         <div className="absolute inset-0 rounded-lg border-2 border-transparent group-hover:border-blue-500 transition-all duration-300 pointer-events-none"></div>
+          {
+            card.link!== undefined && (
+              <button 
+                className="bg-blue-700 text-white py-2 px-4 rounded cursor-pointer mt-2 float-end absolute right-5 bottom-5"
+                onClick={() => window.open(card.link, "_blank")}
+              >
+                Link
+              </button>
+            )
+          }
       </div>
     </Link>
   );
