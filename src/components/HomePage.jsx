@@ -5,29 +5,129 @@ import { Link, useNavigate } from "react-router-dom";
 
 const HomePage = () => {
 
-  const [firstName, setFirstName] = useState("gouranga@siemens.com");
+  const [firstName, setFirstName] = useState("");
 
   const navigator = useNavigate();
 
+
+  const emailArray = [
+    {
+      id: 1,
+      email: "alice@siemens.com",
+      fName: "Alice",
+      lName: "Phumale",
+    },
+    {
+      id: 2,
+      email: "yogesh.andar@siemens.com",
+      fName: "Yogesh",
+      lName: "Andar",
+    },
+    {
+      id: 3,
+      email: "pooja.ratnaparkhi@siemens.com",
+      fName: "Pooja",
+      lName: "Ratnaparkhi",
+    },
+    {
+      id: 4,
+      email: "ramkrushna.nevase@siemens.com",
+      fName: "Ramkrushna",
+      lName: "Nevase",
+    },
+    {
+      id: 5,
+      email: "gouranga.bhattacherjee@siemens.com",
+      fName: "Gouranga",
+      lName: "Bhattacherjee",
+    },
+    {
+      id: 6,
+      email: "vishwajeet.gunale@siemens.com",
+      fName: "Vishwajeet",
+      lName: "Gunale",
+    },
+    {
+      id: 7,
+      email: "yaswanth.sudhi@siemens.com",
+      fName: "Yaswanth",
+      lName: "Sudhi",
+    },
+    {
+      id: 8,
+      email: "praful.deshmukh@siemens.com",
+      fName: "Praful",
+      lName: "Deshmukh",
+    },
+    {
+      id: 9,
+      email: "trupti.palwekar@siemens.com",
+      fName: "Trupti",
+      lName: "Palwekar",
+    },
+    {
+      id: 10,
+      email: "deepali.malewadi@siemens.com",
+      fName: "Deepali",
+      lName: "Malewadi",
+    },
+    {
+      id: 11,
+      email: "padmini.l@siemens.com",
+      fName: "Padmini",
+      lName: "L",
+    },
+    {
+      id: 12,
+      email: "sakthi.vel@siemens.com",
+      fName: "Sakthi",
+      lName: "Vel",
+    },
+    {
+      id: 13,
+      email: "nancy.delalia@siemens.com",
+      fName: "Nancy",
+      lName: "Delalia",
+    },
+    {
+      id: 14,
+      email: "swetha.deepthi.ganja@siemens.com",
+      fName: "Swetha Deepthi",
+      lName: "Ganja",
+    },
+    {
+      id: 15,
+      email: "praveen.s@siemens.com",
+      fName: "Praveen",
+      lName: "S",
+    },
+    {
+      id: 16,
+      email: "vignesh.rajamohan@siemens.com",
+      fName: "Vignesh",
+      lName: "Rajamohan",
+    },
+    {
+      id: 17,
+      email: "monica.tiwari@siemens.com",
+      fName: "Monica",
+      lName: "Tiwari",
+    },
+  ];
   // Function to handle input change
   const handleInputChange = (e) => {
     e.preventDefault();
     if (firstName.includes("@siemens.com")) {
-      let cleanedName = firstName.replace("@siemens.com", "");
-      let formattedName = cleanedName.charAt(0).toUpperCase() + cleanedName.slice(1);
-      console.log(formattedName);
-      navigator("/dashboard", { state: { username: formattedName } });
+      let displayName = emailArray.map((person) => {
+        if(person.email === firstName) {
+          return person.fName + " " + person.lName;
+        }
+      })
+      console.log(displayName);
+      navigator("/dashboard", { state: { username: displayName } });
     } else {
       alert("Please enter a valid Siemens email address");
     }
-    // setFirstName(e.target.value);
-
-    // console.log(firstName);
-    // if(firstName) {
-    //
-    // else if(!firstName) {`
-    //   alert("Please enter a username to proceed");
-    // }
   };
 
   return (
@@ -58,8 +158,8 @@ const HomePage = () => {
         </p>
         <input
           type="text"
-          className="rounded-lg border-gray-200 border-1 p-2 active:border-red-50"
-          placeholder="Enter your name"
+          className="rounded-lg border-gray-200 border-1 p-2 active:border-red-50 text-center max-w-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200"
+          placeholder="Enter your email-ID"
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
         />

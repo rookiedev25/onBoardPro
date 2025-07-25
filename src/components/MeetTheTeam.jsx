@@ -118,7 +118,7 @@ const MeetTheTeam = () => {
 
   // importing images as per filenames
   const carouselImages = carouselImg.map((imageName) => {
-    return `../../public/carousel/${imageName}`;
+    return `/carousel/${imageName}`;
   });
 
   console.log(carouselImages);

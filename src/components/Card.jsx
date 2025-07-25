@@ -101,7 +101,7 @@ const Card = ({ card, variant = "default" }) => {
                 className="bg-blue-700 text-white py-2 px-4 rounded cursor-pointer mt-2 float-end absolute right-5 bottom-5"
                 onClick={() => window.open(card.link, "_blank")}
               >
-                Link
+                View
               </button>
             )
           }

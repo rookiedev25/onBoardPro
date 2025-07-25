@@ -64,34 +64,7 @@ const Dashboard = ({ username }) => {
             </span>
             Hope you have a productive day!
           </p>
-        </div>
-
-        {/* <div className="caraouselContainer w-full max-w-5xl max-h-screen rounded-3xl shadow-xl px-5 py-3 mb-7 flex flex-row gap-4 z-10 justify-center items-center bg-black">
-          <button
-            className="leftButton z-3 bg-gray-300 text-black rounded-full h-17 p-2 cursor-pointer hover:bg-white transition-colors"
-            onClick={handleScrollLeft}
-          >
-            &lt;
-          </button>
-          <div
-            className="imageContainer flex flex-row items-center gap-4 overflow-x-hidden scrollbar-hide"
-            ref={imageContainerRef}
-          >
-            {carouselImages.map((img, idx) => (
-              <img
-                key={idx}
-                src={img}
-                alt={`carousel-${idx}`}
-                className="rounded-xl shadow-md max-w-300 max-h-150 object-cover"
-              />
-            ))}
-          </div>
-          <button className="rightButton z-3 bg-gray-300 text-black rounded-full h-17 p-2 cursor-pointer hover:bg-white"
-          onClick={handleScrollRight}>
-            &gt;
-          </button>
-        </div> */}
-        
+        </div>        
         <div className="">
           <CardsGrid
             type="dashboard"
