@@ -49,7 +49,7 @@ const faqs = [
    
 return (
     <>
-        <div className="max-w-6xl mx-auto mt-20 p-8 bg-white rounded-2xl shadow-lg">
+        <div className="max-w-6xl mx-auto mt-30 p-8 bg-white rounded-2xl shadow-lg">
             <h2 className="text-center mb-8 font-bold text-3xl text-gray-900 animate-fade-in">
                 Frequently Asked Questions
             </h2>

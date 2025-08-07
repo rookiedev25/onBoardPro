@@ -14,24 +14,24 @@ const NavBar = ({ isLoggedIn, logoutHandler }) => {
       <NavLink to="/" className="text-3xl font-extrabold tracking-tight">
         OnBoardPro
       </NavLink>
-      <div className="flex flex-row mr-21 items-center">
-        {isLoggedIn && (
+      {isLoggedIn && (
+        <div className="flex flex-row mr-21 items-center">
           <NavLink
             to="/dashboard"
             className="text-lg font-thin px-4 py-2 transition-all duration-200 hover:font-bold"
           >
             Dashboard
           </NavLink>
-        )}
-        <NavLink
-          to="https://github.com/rookiedev25"
-          target="_blank"
-          className="text-lg font-thin px-4 py-2 transition-all duration-200 hover:font-bold"
-        >
-          GitHub
-        </NavLink>
 
-        {/* <NavLink
+          <NavLink
+            to="https://github.com/rookiedev25"
+            target="_blank"
+            className="text-lg font-thin px-4 py-2 transition-all duration-200 hover:font-bold"
+          >
+            GitHub
+          </NavLink>
+
+          {/* <NavLink
           to="/about"
           className={({ isActive }) =>
             `text-lg font-medium px-4 py-2 transition-all duration-200 border-1 ${
@@ -43,7 +43,7 @@ const NavBar = ({ isLoggedIn, logoutHandler }) => {
         >
           About
         </NavLink> */}
-        {/* <NavLink
+          {/* <NavLink
           to="/contact"
           className={({ isActive }) =>
             `text-lg font-medium px-4 py-2 transition-all duration-200 ${
@@ -55,7 +55,8 @@ const NavBar = ({ isLoggedIn, logoutHandler }) => {
         >
           Contact
         </NavLink> */}
-      </div>
+        </div>
+      )}
       <div className="rightMostButton">
         {isLoggedIn && (
           <button

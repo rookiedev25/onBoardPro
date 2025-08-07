@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 // import demoImage from "../../public/caraousel"
 
-
 const HomePage = ({ loginHandler, isLoggedIn, currentUser }) => {
   const [email, setEmail] = useState("");
 
@@ -176,21 +175,24 @@ const HomePage = ({ loginHandler, isLoggedIn, currentUser }) => {
             Discover a supportive environment where your growth as a Technical
             Writer is our priority.
           </p>
-          <input
-            type="text"
-            className="rounded-lg border-gray-200 border-1 p-2 active:border-red-50 text-center max-w-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200"
-            placeholder="Enter your email-ID"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <Link to={"/dashboard"} className="w-fit flex justify-center">
-            <button
-              className="bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white font-semibold py-3 px-8 rounded-xl shadow-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 cursor-pointer"
-              onClick={handleInputChange}
-            >
-              Get Started
-            </button>
-          </Link>
+          <div className="inputContainer flex flex-row">
+            <input
+              type="text"
+              className="rounded-tl-lg rounded-bl-lg border-gray-200 border-1 p-2 active:border-red-50 text-center max-w-md focus:outline-none focus:ring-1 focus:ring-blue-500 transition-all duration-200"
+              placeholder="Enter your email-ID"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <Link to={"/dashboard"} className="w-fit flex justify-center">
+              <button
+                className="bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white font-semibold py-2 px-6  
+                rounded-br-lg rounded-tr-lg  shadow-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 cursor-pointer"
+                onClick={handleInputChange}
+              >
+                Login
+              </button>
+            </Link>
+          </div>
         </div>
       )}
     </div>
