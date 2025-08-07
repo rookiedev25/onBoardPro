@@ -1,4 +1,3 @@
-// import React, { useState } from "react";
 import NavBar from "./components/NavBar";
 import HomePage from "./components/HomePage";
 import { Routes, Route } from "react-router-dom";
@@ -15,43 +14,83 @@ import GraphicTools from "./components/GraphicTools";
 import Guidelines from "./components/Guidelines";
 import MeetTheTeam from "./components/MeetTheTeam";
 import FAQs from "./components/FAQs";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import TrainingModules from "./components/TrainingModules";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 const App = () => {
-  // const [loggedStatus, setLoggedInStatus] = useState(false);
+  // Authentication state management
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoading, setIsLoading] = useState(true); // Add loading state
+  const [currentUser, setCurrentUser] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+  });
 
-  // const [token, setToken] = useState();
+  // Load user data from localStorage on app start
+  useEffect(() => {
+    const savedUser = localStorage.getItem("currentUser");
+    const savedLoginStatus = localStorage.getItem("isLoggedIn");
 
-  // if (!token) {
-  //   return <Login setToken={setToken} />;
-  // }
+    if (savedUser && savedLoginStatus === "true") {
+      setCurrentUser(JSON.parse(savedUser));
+      setIsLoggedIn(true);
+    }
 
-  // const loginHandler = () => {
-  //   setLoggedInStatus(true);
-  // };
+    // Set loading to false after checking localStorage
+    setIsLoading(false);
+  }, []);
 
-  // const logoutHandler = () => {
-  //   setLoggedInStatus(false);
-  // };
+  // Login handler - called when user successfully enters email
+  const loginHandler = (userInfo) => {
+    setCurrentUser(userInfo);
+    setIsLoggedIn(true);
 
-  // prop-drill to dashboard to fetch and show username
-  const [firstName, setFirstName] = useState("");
+    // Save to localStorage
+    localStorage.setItem("currentUser", JSON.stringify(userInfo));
+    localStorage.setItem("isLoggedIn", "true");
+  };
 
+  // Logout handler - clears user data and redirects to home
+  const logoutHandler = () => {
+    setCurrentUser({
+      firstName: "",
+      lastName: "",
+      email: "",
+    });
+    setIsLoggedIn(false);
 
+    // Clear localStorage
+    localStorage.removeItem("currentUser");
+    localStorage.removeItem("isLoggedIn");
+  };
 
   return (
     <>
       <CardsProvider>
-        <NavBar />
+        <NavBar isLoggedIn={isLoggedIn} logoutHandler={logoutHandler} />
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          {/* <Route path="/login" element={<Login />} /> */}
-          {/* <Route path="/register" element={<Register />} /> */}
-          {/* <Route path="/about" element={<About />} /> */}
+          <Route
+            path="/"
+            element={
+              <HomePage
+                loginHandler={loginHandler}
+                isLoggedIn={isLoggedIn}
+                currentUser={currentUser}
+              />
+            }
+          />
           <Route
             path="/dashboard"
-            element={<Dashboard username={firstName} />}
+            element={
+              <ProtectedRoute isLoggedIn={isLoggedIn} isLoading={isLoading}>
+                <Dashboard
+                  username={`${currentUser.firstName} ${currentUser.lastName}`}
+                  isLoggedIn={isLoggedIn}
+                />
+              </ProtectedRoute>
+            }
           />
           <Route path="/meet-the-team" element={<MeetTheTeam />} />
           <Route path="/goodbye" element={<GoodBye />} />

@@ -1,11 +1,21 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import CardsGrid from "./CardsGrid";
 
-const Dashboard = ({ username }) => {
+const Dashboard = ({ username, isLoggedIn }) => {
   const location = useLocation();
-  if (!username && location.state && location.state.username) {
-    username = location.state.username;
+  const navigate = useNavigate();
+
+  // If not logged in and no username, redirect to home
+  if (!isLoggedIn && !username) {
+    navigate("/");
+    return null;
+  }
+
+  // Fallback to location state if username prop is not available
+  let displayUsername = username;
+  if (!displayUsername && location.state && location.state.username) {
+    displayUsername = location.state.username;
   }
 
   //calculate current date:
@@ -43,8 +53,6 @@ const Dashboard = ({ username }) => {
     monthNames[date.getMonth()]
   }, ${year}`;
 
- 
-
   return (
     <>
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 flex flex-col items-center py-16 px-4">
@@ -56,7 +64,8 @@ const Dashboard = ({ username }) => {
 
         <div className="w-full max-w-5xl bg-white rounded-3xl shadow-xl p-10 mb-7 mt-7 flex flex-col items-start gap-4 z-2">
           <h1 className="text-4xl font-bold text-gray-800 mb-2 tracking-tight">
-            Welcome back, <span className="text-blue-600">{username}</span>
+            Welcome back,{" "}
+            <span className="text-blue-600">{displayUsername}</span>
           </h1>
           <p className="text-lg text-gray-500 font-medium">
             <span className="inline-block bg-blue-100 text-blue-700 px-3 py-1 rounded-full mr-2">
@@ -64,7 +73,7 @@ const Dashboard = ({ username }) => {
             </span>
             Hope you have a productive day!
           </p>
-        </div>        
+        </div>
         <div className="">
           <CardsGrid
             type="dashboard"

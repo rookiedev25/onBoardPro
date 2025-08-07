@@ -3,12 +3,12 @@ import { Link, useNavigate } from "react-router-dom";
 // import demoImage from "../../public/caraousel"
 
 
-const HomePage = () => {
-
-  const [firstName, setFirstName] = useState("");
+const HomePage = ({ loginHandler, isLoggedIn, currentUser }) => {
+  const [email, setEmail] = useState("");
 
   const navigator = useNavigate();
 
+  // Don't auto-redirect, instead show different content based on login status
 
   const emailArray = [
     {
@@ -117,14 +117,22 @@ const HomePage = () => {
   // Function to handle input change
   const handleInputChange = (e) => {
     e.preventDefault();
-    if (firstName.includes("@siemens.com")) {
-      let displayName = emailArray.map((person) => {
-        if(person.email === firstName) {
-          return person.fName + " " + person.lName;
-        }
-      })
-      console.log(displayName);
-      navigator("/dashboard", { state: { username: displayName } });
+    if (email.includes("@siemens.com")) {
+      const foundUser = emailArray.find((person) => person.email === email);
+
+      if (foundUser) {
+        // Call loginHandler with user information
+        loginHandler({
+          firstName: foundUser.fName,
+          lastName: foundUser.lName,
+          email: foundUser.email,
+        });
+
+        // Navigate to dashboard
+        navigator("/dashboard");
+      } else {
+        alert("Email not found in our system");
+      }
     } else {
       alert("Please enter a valid Siemens email address");
     }
@@ -137,41 +145,54 @@ const HomePage = () => {
         alt="Technical Documentation Background"
         className="absolute inset-0 w-full h-full object-cover opacity-20 z-0"
       />
-      {/* <div className="carousel w-full max-w-5xl bg-white rounded-3xl shadow-xl p-10 mb-7 mt-7 flex flex-row items-start gap-4 z-10">
-        {carouselImages.map((img, idx) => (
-          <img
-            key={idx}
-            src={img}
-            alt={`carousel-${idx}`}
-            className="rounded-xl shadow-md w-48 h-32 object-cover"
+
+      {/* Conditional rendering based on login status */}
+      {isLoggedIn ? (
+        // Already logged in - show welcome back message
+        <div className="max-w-4xl w-full flex flex-col justify-center items-center gap-6 bg-white/80 rounded-3xl shadow-2xl p-10 border border-gray-200 backdrop-blur-md">
+          <h1 className="text-5xl font-extrabold text-center text-gray-900 leading-tight tracking-tight">
+            Welcome back,{" "}
+            <span className="">
+              {currentUser?.firstName} {currentUser?.lastName}
+            </span>
+          </h1>
+          <p className="text-lg text-center text-gray-600 px-2">
+            You're already logged in. Ready to continue your learning journey?
+          </p>
+          <Link to="/dashboard" className="w-fit flex justify-center">
+            <button className="bg-gradient-to-r from-blue-500 to-green-500 hover:from-blue-600 hover:to-green-600 text-white font-semibold py-3 px-8 rounded-xl shadow-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 cursor-pointer">
+              Go to Dashboard
+            </button>
+          </Link>
+        </div>
+      ) : (
+        // Not logged in - show login form
+        <div className="max-w-4xl w-full flex flex-col justify-center items-center gap-6 bg-white/80 rounded-3xl shadow-2xl p-10 border border-gray-200 backdrop-blur-md">
+          <h1 className="text-5xl font-extrabold text-center text-gray-900 leading-tight tracking-tight">
+            Empowering TechWriters to learn and connect with a supportive
+            community
+          </h1>
+          <p className="text-lg text-center text-gray-600 px-2">
+            Discover a supportive environment where your growth as a Technical
+            Writer is our priority.
+          </p>
+          <input
+            type="text"
+            className="rounded-lg border-gray-200 border-1 p-2 active:border-red-50 text-center max-w-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200"
+            placeholder="Enter your email-ID"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
-        ))}
-      </div> */}
-      <div className="max-w-4xl w-full flex flex-col justify-center items-center gap-6 bg-white/80 rounded-3xl shadow-2xl p-10 border border-gray-200 backdrop-blur-md">
-        <h1 className="text-5xl font-extrabold text-center text-gray-900 leading-tight tracking-tight">
-          Empowering TechWriters to learn and connect with a supportive
-          community
-        </h1>
-        <p className="text-lg text-center text-gray-600 px-2">
-          Discover a supportive environment where your growth as a Technical
-          Writer is our priority.
-        </p>
-        <input
-          type="text"
-          className="rounded-lg border-gray-200 border-1 p-2 active:border-red-50 text-center max-w-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200"
-          placeholder="Enter your email-ID"
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
-        />
-        <Link to={"/dashboard"} className="w-fit flex justify-center">
-          <button
-            className="bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white font-semibold py-3 px-8 rounded-xl shadow-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 cursor-pointer"
-            onClick={handleInputChange}
-          >
-            Get Started
-          </button>
-        </Link>
-      </div>
+          <Link to={"/dashboard"} className="w-fit flex justify-center">
+            <button
+              className="bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white font-semibold py-3 px-8 rounded-xl shadow-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 cursor-pointer"
+              onClick={handleInputChange}
+            >
+              Get Started
+            </button>
+          </Link>
+        </div>
+      )}
     </div>
   );
 };
