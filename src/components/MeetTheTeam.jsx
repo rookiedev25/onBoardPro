@@ -159,6 +159,11 @@ const MeetTheTeam = () => {
 
   return (
     <>
+        <img
+          src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Technical Documentation Background"
+          className="absolute inset-0 w-full h-full object-cover opacity-20 z-0"
+        />
       <div className="flex flex-col items-center py-10 md:py-20 mt-10 min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-purple-100">
         <h2 className="text-2xl md:text-4xl font-extrabold mb-8 md:mb-12 text-gray-900 tracking-tight drop-shadow-lg px-4 text-center">
           Meet The Team

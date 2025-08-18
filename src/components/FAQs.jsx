@@ -48,39 +48,43 @@ const faqs = [
 
    
 return (
-    <>
-        <div className="max-w-6xl mx-auto mt-30 p-8 bg-white rounded-2xl shadow-lg">
-            <h2 className="text-center mb-8 font-bold text-3xl text-gray-900 animate-fade-in">
-                Frequently Asked Questions
-            </h2>
-            <div>
-                {faqs.map((faq, idx) => (
-                    <details
-                        key={idx}
-                        className="mb-5 bg-gray-100 rounded-lg p-5 border-none shadow transition-all duration-300 ease-in-out hover:shadow-md"
-                        style={{ animationDelay: `${idx * 100}ms` }}
-                    >
-                        <summary className="font-semibold text-lg cursor-pointer outline-none transition-colors duration-200 hover:text-blue-600">
-                            {faq.question}
-                        </summary>
-                        <div className="mt-3 text-gray-700 text-base leading-relaxed transform transition-all duration-300 ease-in-out">
-                            {faq.answer instanceof Array ? (
-                                <ul className="list-disc pl-5 space-y-2">
-                                    {faq.answer.map((line, lineIdx) => (
-                                        <li key={lineIdx}>{line}</li>
-                                    ))}
-                                </ul>
-                            ) : (
-                                <p>{faq.answer}</p>
-                            )}
-                        </div>
-                    </details>
-                ))}
+  <>
+    <img
+      src="https://plus.unsplash.com/premium_photo-1680302397750-ef86e280a172?q=80&w=2060&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      alt="Background"
+      className="absolute inset-0 w-full h-full object-cover opacity-20 -z-1"
+    />
+    <div className="max-w-6xl mx-auto mt-30 p-8 bg-white rounded-2xl shadow-lg">
+      <h2 className="text-center mb-8 font-bold text-3xl text-gray-900 animate-fade-in">
+        Frequently Asked Questions
+      </h2>
+      <div>
+        {faqs.map((faq, idx) => (
+          <details
+            key={idx}
+            className="mb-5 bg-gray-100 rounded-lg p-5 border-none shadow transition-all duration-300 ease-in-out hover:shadow-md"
+            style={{ animationDelay: `${idx * 100}ms` }}
+          >
+            <summary className="font-semibold text-lg cursor-pointer outline-none transition-colors duration-200 hover:text-blue-600">
+              {faq.question}
+            </summary>
+            <div className="mt-3 text-gray-700 text-base leading-relaxed transform transition-all duration-300 ease-in-out">
+              {faq.answer instanceof Array ? (
+                <ul className="list-disc pl-5 space-y-2">
+                  {faq.answer.map((line, lineIdx) => (
+                    <li key={lineIdx}>{line}</li>
+                  ))}
+                </ul>
+              ) : (
+                <p>{faq.answer}</p>
+              )}
             </div>
-        </div>
-        
-    </>
-)
+          </details>
+        ))}
+      </div>
+    </div>
+  </>
+);
 }
 
 export default FAQs

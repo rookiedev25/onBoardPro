@@ -17,6 +17,7 @@ import FAQs from "./components/FAQs";
 import { useState, useEffect } from "react";
 import ProtectedRoute from "./components/ProtectedRoute";
 import TrainingModulesPage from "./components/TrainingModulesPage";
+import PageNotFound from "./components/specialPages/PageNotFound";
 
 const App = () => {
   // Authentication state management
@@ -92,18 +93,19 @@ const App = () => {
               </ProtectedRoute>
             }
           />
-          <Route path="/meet-the-team" element={<MeetTheTeam />} />
-          <Route path="/goodbye" element={<GoodBye />} />
-          <Route path="/training" element={<Training />} />
-          <Route path="/training-essentials" element={<TrainingEssentials />} />
+          <Route path="/dashboard/meet-the-team" element={<MeetTheTeam />} />
+          <Route path="/dashboard/goodbye" element={<GoodBye />} />
+          <Route path="/dashboard/training" element={<Training />} />
+          <Route path="/dashboard/training-essentials" element={<TrainingEssentials />} />
           <Route
-            path="/training-essentials/set/:setNumber"
+            path="/dashboard/training-essentials/set/:setNumber"
             element={<TrainingModulesPage />}
           />
-          <Route path="/graphic-tools" element={<GraphicTools />} />
-          <Route path="/ticket-management" element={<TicketManagement />} />
-          <Route path="/guidelines" element={<Guidelines />} />
-          <Route path="/faqs" element={<FAQs />} />
+          <Route path="/dashboard/graphic-tools" element={<GraphicTools />} />
+          <Route path="/dashboard/ticket-management" element={<TicketManagement />} />
+          <Route path="/dashboard/guidelines" element={<Guidelines />} />
+          <Route path="/dashboard/faqs" element={<FAQs />} />
+          <Route path="/dashboard/*" element={<PageNotFound />} />
         </Routes>
       </CardsProvider>
     </>
