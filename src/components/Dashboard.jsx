@@ -55,26 +55,28 @@ const Dashboard = ({ username, isLoggedIn }) => {
 
   return (
     <>
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 flex flex-col items-center py-16 px-4">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 flex flex-col items-center py-16 sm:py-20 px-4 sm:px-6">
         <img
           // src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
           alt="Technical Documentation Background"
           className="absolute inset-0 w-full h-full object-cover opacity-20 -z-0"
         />
 
-        <div className="w-full max-w-5xl bg-white rounded-3xl shadow-xl p-10 mb-7 mt-7 flex flex-col items-start gap-4 z-2">
-          <h1 className="text-4xl font-bold text-gray-800 mb-2 tracking-tight">
+        <div className="w-full max-w-5xl bg-white rounded-2xl sm:rounded-3xl shadow-xl p-6 sm:p-8 lg:p-10 mb-6 sm:mb-7 mt-16 sm:mt-7 flex flex-col items-start gap-3 sm:gap-4 z-2">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-2 tracking-tight leading-tight">
             Welcome back,{" "}
-            <span className="text-blue-600">{displayUsername}</span>
+            <span className="text-blue-600 break-words">{displayUsername}</span>
           </h1>
-          <p className="text-lg text-gray-500 font-medium">
-            <span className="inline-block bg-blue-100 text-blue-700 px-3 py-1 rounded-full mr-2">
+          <p className="text-base sm:text-lg text-gray-500 font-medium flex flex-col sm:flex-row sm:items-center gap-2">
+            <span className="inline-block bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm sm:text-base">
               {formattedDate}
             </span>
-            Hope you have a productive day!
+            <span className="text-sm sm:text-lg">
+              Hope you have a productive day!
+            </span>
           </p>
         </div>
-        <div className="">
+        <div className="w-full">
           <CardsGrid
             type="dashboard"
             variant="threeByThreeCards"

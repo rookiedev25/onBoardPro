@@ -1,26 +1,26 @@
 // components/Card.jsx
 import React from "react";
 import { Link } from "react-router-dom";
-import { useCards } from "../contexts/CardsContext";
+// import { useCards } from "../contexts/CardsContext";
 
 const Card = ({ card, variant = "default" }) => {
-  const { progress, updateProgress } = useCards();
+  // const { progress, updateProgress } = useCards();
 
   const getCardStyles = () => {
     const baseStyles =
-          "bg-white shadow-md rounded-lg p-4 flex items-center justify-center hover:shadow-lg transition-shadow duration-300 cursor-pointer";
+      "bg-white shadow-md rounded-lg p-4 sm:p-6 flex items-center justify-center transition-shadow duration-300 cursor-pointer outline-none ring-0 group-hover:ring-2 group-hover:ring-blue-700 w-full";
 
     switch (variant || card.style) {
       case "threeByThreeCards":
-        return `${baseStyles} h-80 w-90`;
+        return `${baseStyles} h-64 sm:h-72 md:h-80 min-h-[16rem]`;
       case "twoByTwoCards":
-        return `${baseStyles} h-80 w-90`;
-    case "singleCard":
-        return `${baseStyles} h-80 w-90`;
+        return `${baseStyles} h-64 sm:h-72 md:h-80 min-h-[16rem]`;
+      case "singleCard":
+        return `${baseStyles} h-64 sm:h-72 md:h-80 min-h-[16rem]`;
       case "module":
-        return `${baseStyles} h-40 w-250`;
+        return `${baseStyles} h-32 sm:h-36 md:h-40 min-h-[8rem]`;
       default:
-        return `${baseStyles} h-80 w-90`;
+        return `${baseStyles} h-64 sm:h-72 md:h-80 min-h-[16rem]`;
     }
   };
 
@@ -49,62 +49,58 @@ const Card = ({ card, variant = "default" }) => {
 
   return (
     <Link to={card.routePath} className="card group">
-      <div className={`${getCardStyles()} relative overflow-hidden flex flex-row justify-space-between gap-20`}>
+      <div className={`${getCardStyles()} relative overflow-hidden flex flex-col sm:flex-row justify-between gap-4 sm:gap-6 md:gap-20`}>
         {/* Card content */}
-        <div className="relative z-10 flex flex-col items-center justify-center h-full ">
+        <div className={`relative z-10 flex flex-col ${variant === "module" ? "items-start justify-center" : "items-center justify-center"} h-full min-w-0 flex-1`}>
           {/* Icon or image */}
           {card.icon && (
-            <div className="mb-4">
-              <img src={card.icon} alt="" className="h-12 w-12 object-contain drop-shadow-xl" />
+            <div className="mb-2 sm:mb-4">
+              <img
+                src={card.icon}
+                alt=""
+                className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 object-contain drop-shadow-xl"
+              />
             </div>
           )}
-          { 
-            (card.link && card.linkText) ? (
-              
-              <a href={card.link} className="text-blue-500 hover:underline">
-                {card.linkText}
-              </a>
-            ) : (
-              true
-            )
-          }
-          <h2 className="text-xl font-bold text-black-xl group-hover:text-blue-700 transition-colors duration-200">
+          {card.link && card.linkText ? (
+            <a href={card.link} className="text-blue-500 hover:underline text-sm sm:text-base">
+              {card.linkText}
+            </a>
+          ) : (
+            true
+          )}
+          <h2 className={`text-lg sm:text-xl md:text-xl font-bold text-black group-hover:text-blue-700 transition-colors duration-200 ${variant === "module" ? "text-left" : "text-center"}`}>
             {card.cardName}
           </h2>
-          <p className="text-lg font-light max-w-120 text-center">{card.cardDescription}</p>
-          {/* Progress bar */}
-          {card.progress !== undefined && (
-            <div className="mt-6 w-40 flex flex-col items-center">
-
-              {/* link to resource */}
-              {/* <button className="bg-blue-700 text-white py-2 px-4 rounded cursor-pointer" onClick={() => window.open(card.link, "_blank")}>Link</button> */}
-
-              {/* Progress bar */}
-              {/* <div className="w-full bg-blue-100 rounded-full h-3 shadow-inner">
-                <div
-                  className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-700 h-3 rounded-full transition-all duration-500"
-                  style={{ width: `${card.progress}%` }}
-                ></div>
-              </div> */}
-              {/* percentage caculation display here */}
-                {/* <span className="block text-xs text-blue-600 mt-2 text-center font-medium tracking-wide">
-                  {card.progress}%
-                </span> */}
-            </div>
+          <p className={`text-sm sm:text-base md:text-lg font-light px-2 leading-relaxed ${variant === "module" ? "text-left" : "text-center"}`}>
+            {card.cardDescription}
+          </p>
+        </div>
+        {/* Buttons for learning modules */}
+        <div className={`gap-2 flex ${variant === "module" ? "flex-row" : "flex-row sm:flex-col"} justify-center ${variant === "module" ? "sm:justify-center items-center" : "sm:justify-end items-center sm:absolute sm:right-3 sm:bottom-3 md:right-5 md:bottom-5"}`}>
+          {card.videoLink !== undefined && (
+            <button
+              className="bg-blue-700 text-white py-1.5 px-3 sm:py-2 sm:px-4 rounded cursor-pointer hover:bg-blue-800 transition-colors duration-200 text-xs sm:text-sm"
+              onClick={(e) => {
+                e.preventDefault();
+                window.open(card.videoLink, "_blank");
+              }}
+            >
+              Video
+            </button>
+          )}
+          {card.pptLink !== undefined && (
+            <button
+              className="bg-blue-700 text-white py-1.5 px-3 sm:py-2 sm:px-4 rounded cursor-pointer hover:bg-blue-800 transition-colors duration-200 text-xs sm:text-sm"
+              onClick={(e) => {
+                e.preventDefault();
+                window.open(card.pptLink, "_blank");
+              }}
+            >
+              PPT
+            </button>
           )}
         </div>
-        {/* Blue border hover effect */}
-        <div className="absolute inset-0 rounded-lg border-2 border-transparent group-hover:border-blue-500 transition-all duration-300 pointer-events-none"></div>
-          {
-            card.link!== undefined && (
-              <button 
-                className="bg-blue-700 text-white py-2 px-4 rounded cursor-pointer mt-2 float-end absolute right-5 bottom-5"
-                onClick={() => window.open(card.link, "_blank")}
-              >
-                View
-              </button>
-            )
-          }
       </div>
     </Link>
   );

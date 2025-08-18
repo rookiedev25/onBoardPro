@@ -15,8 +15,8 @@ import Guidelines from "./components/Guidelines";
 import MeetTheTeam from "./components/MeetTheTeam";
 import FAQs from "./components/FAQs";
 import { useState, useEffect } from "react";
-import TrainingModules from "./components/TrainingModules";
 import ProtectedRoute from "./components/ProtectedRoute";
+import TrainingModulesPage from "./components/TrainingModulesPage";
 
 const App = () => {
   // Authentication state management
@@ -97,8 +97,8 @@ const App = () => {
           <Route path="/training" element={<Training />} />
           <Route path="/training-essentials" element={<TrainingEssentials />} />
           <Route
-            path="/training-essentials/set-1"
-            element={<TrainingModules />}
+            path="/training-essentials/set/:setNumber"
+            element={<TrainingModulesPage />}
           />
           <Route path="/graphic-tools" element={<GraphicTools />} />
           <Route path="/ticket-management" element={<TicketManagement />} />

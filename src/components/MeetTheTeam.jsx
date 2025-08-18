@@ -7,31 +7,37 @@ const MeetTheTeam = () => {
       writers: [
         {
           name: "Vignesh Rajamohan",
+          linkedIn: "",
           region: "Bengaluru",
           projects: ["Desigo CC"],
         },
         {
           name: "Monica Tiwari",
+          linkedIn: "",
           region: "Bengaluru",
           projects: ["Desigo CC"],
         },
         {
           name: "Alice Phumale",
+          linkedIn: "https://www.linkedin.com/in/alice-phumale/",
           region: "Pune",
           projects: ["System One"],
         },
         {
           name: "Yogesh Andar",
+          linkedIn: "",
           region: "Pune",
           projects: ["Building X"],
         },
         {
           name: "Pooja Ratnaparkhi",
+          linkedIn: "https://www.linkedin.com/in/pooja-ratnaparkhi-58735251",
           region: "Pune",
           projects: ["Fire Safety"],
         },
         {
           name: "Ramkrushna Nevase",
+          linkedIn: "https://www.linkedin.com/in/ramkrushna-nevase-b6247a128",
           region: "Pune",
           projects: ["Building X"],
         },
@@ -44,51 +50,62 @@ const MeetTheTeam = () => {
         },
         {
           name: "Vishwajeet Gunale",
+          linkedIn: "https://www.linkedin.com/in/vishwajeet-gunale-037500100",
           region: "Pune",
           projects: ["Desigo CC", "System Design Tool (SDT)"],
         },
         {
           name: "Yaswanth Sudhi",
+          linkedIn: "https://www.linkedin.com/in/yaswanth-sudhi-802641190",
           region: "Pune",
           projects: ["Edge BMS"],
         },
         {
           name: "Praful Deshmukh",
+          linkedIn: "https://www.linkedin.com/in/praful-deshmukh-53303398",
           region: "Pune",
           projects: ["NGAA", "LMS"],
         },
         {
           name: "Trupti Palwekar",
+          linkedIn: "https://www.linkedin.com/in/trupti-palwekar-a783a9174",
           region: "Pune",
           projects: ["Mobility"],
         },
         {
           name: "Deepali Malewadi",
+          linkedIn: "https://www.linkedin.com/in/deepali-malewadi-9bb661117",
           region: "Pune",
           projects: ["Siemens Energy"],
         },
         {
           name: "Padmini L",
+          linkedIn:
+            "https://www.linkedin.com/in/padmini-lakshmipathy-574a221aa/",
           region: "Chennai",
           projects: ["Desigo CC"],
         },
         {
           name: "Sakhti Vel",
+          linkedIn: "https://www.linkedin.com/in/sakthi3082k",
           region: "Chennai",
           projects: ["Building X"],
         },
         {
           name: "Nancy Delaila",
+          linkedIn: "https://www.linkedin.com/in/nancy-delaila-93ba146b/",
           region: "Chennai",
           projects: ["Control classic"],
         },
         {
           name: "Swetha Deepthi Ganja",
+          linkedIn: "https://www.linkedin.com/in/swetha-deepthi-71100411b",
           region: "Chennai",
           projects: ["Building X"],
         },
         {
           name: "Praveen S",
+          linkedIn: "https://www.linkedin.com/in/praveen-s-38815946",
           region: "Chennai",
           projects: ["Access classic"],
         },
@@ -180,7 +197,7 @@ const MeetTheTeam = () => {
             Prachi Deshpande
           </h2>
           <p className="text-lg font-light text-gray-700">
-            Senior Technical Writer at Siemens, Pune
+            Document & Configuration Mgmt Professional - R&D
           </p>
         </div>
         {/* writer cards */}

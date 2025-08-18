@@ -1,7 +1,7 @@
 import React from 'react'
-import CardsGrid from './CardsGrid';
+import CardsGrid from '../../CardsGrid';
 
-const TrainingModules = () => {
+const SetOne = () => {
   return (
     <>
       <div className="flex flex-col justify-center items-center p-10 min-h-screen bg-gray-100 bg-gradient-to-br from-gray-50 via-blue-50 to-purple-100">
@@ -25,11 +25,11 @@ const TrainingModules = () => {
           </p>
         </div>
         <div className="moduleCardContainer ">
-          <CardsGrid type="trainingModules" variant="module" gridCols={1} />
+          <CardsGrid type="trainingModules_SET1" variant="module" gridCols={1} />
         </div>
       </div>
     </>
   );
 };
 
-export default TrainingModules
+export default SetOne;

@@ -138,7 +138,7 @@ const HomePage = ({ loginHandler, isLoggedIn, currentUser }) => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-green-100 via-white to-blue-100">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-green-100 via-white to-blue-100 px-4 sm:px-6 py-8">
       <img
         src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
         alt="Technical Documentation Background"
@@ -148,45 +148,47 @@ const HomePage = ({ loginHandler, isLoggedIn, currentUser }) => {
       {/* Conditional rendering based on login status */}
       {isLoggedIn ? (
         // Already logged in - show welcome back message
-        <div className="max-w-4xl w-full flex flex-col justify-center items-center gap-6 bg-white/80 rounded-3xl shadow-2xl p-10 border border-gray-200 backdrop-blur-md">
-          <h1 className="text-5xl font-extrabold text-center text-gray-900 leading-tight tracking-tight">
+        <div className="max-w-4xl w-full flex flex-col justify-center items-center gap-4 sm:gap-6 bg-white/80 rounded-2xl sm:rounded-3xl shadow-2xl p-6 sm:p-8 lg:p-10 border border-gray-200 backdrop-blur-md">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-center text-gray-900 leading-tight tracking-tight">
             Welcome back,{" "}
-            <span className="">
+            <span className="break-words">
               {currentUser?.firstName} {currentUser?.lastName}
             </span>
           </h1>
-          <p className="text-lg text-center text-gray-600 px-2">
+          <p className="text-base sm:text-lg text-center text-gray-600 px-2">
             You're already logged in. Ready to continue your learning journey?
           </p>
           <Link to="/dashboard" className="w-fit flex justify-center">
-            <button className="bg-gradient-to-r from-blue-500 to-green-500 hover:from-blue-600 hover:to-green-600 text-white font-semibold py-3 px-8 rounded-xl shadow-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 cursor-pointer">
+            <button className="bg-gradient-to-r from-blue-500 to-green-500 hover:from-blue-600 hover:to-green-600 text-white font-semibold py-2 sm:py-3 px-6 sm:px-8 rounded-xl shadow-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 cursor-pointer text-sm sm:text-base">
               Go to Dashboard
             </button>
           </Link>
         </div>
       ) : (
         // Not logged in - show login form
-        <div className="max-w-4xl w-full flex flex-col justify-center items-center gap-6 bg-white/80 rounded-3xl shadow-2xl p-10 border border-gray-200 backdrop-blur-md">
-          <h1 className="text-5xl font-extrabold text-center text-gray-900 leading-tight tracking-tight">
+        <div className="max-w-4xl w-full flex flex-col justify-center items-center gap-4 sm:gap-6 bg-white/80 rounded-2xl sm:rounded-3xl shadow-2xl p-6 sm:p-8 lg:p-10 border border-gray-200 backdrop-blur-md">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-center text-gray-900 leading-tight tracking-tight">
             Empowering TechWriters to learn and connect with a supportive
             community
           </h1>
-          <p className="text-lg text-center text-gray-600 px-2">
+          <p className="text-base sm:text-lg text-center text-gray-600 px-2">
             Discover a supportive environment where your growth as a Technical
             Writer is our priority.
           </p>
-          <div className="inputContainer flex flex-row">
+          <div className="inputContainer flex flex-col sm:flex-row w-full max-w-lg gap-2 sm:gap-0">
             <input
               type="text"
-              className="rounded-tl-lg rounded-bl-lg border-gray-200 border-1 p-2 active:border-red-50 text-center max-w-md focus:outline-none focus:ring-1 focus:ring-blue-500 transition-all duration-200"
+              className="flex-1 rounded-lg sm:rounded-tl-lg sm:rounded-bl-lg sm:rounded-tr-none sm:rounded-br-none border-gray-200 border-1 p-3 sm:p-2 text-center focus:outline-none focus:ring-1 focus:ring-blue-500 transition-all duration-200 text-sm sm:text-base"
               placeholder="Enter your email-ID"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <Link to={"/dashboard"} className="w-fit flex justify-center">
+            <Link
+              to={"/dashboard"}
+              className="w-full sm:w-fit flex justify-center"
+            >
               <button
-                className="bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white font-semibold py-2 px-6  
-                rounded-br-lg rounded-tr-lg  shadow-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 cursor-pointer"
+                className="w-full sm:w-auto bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white font-semibold py-3 sm:py-2 px-6 rounded-lg sm:rounded-br-lg sm:rounded-tr-lg sm:rounded-tl-none sm:rounded-bl-none shadow-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 cursor-pointer text-sm sm:text-base"
                 onClick={handleInputChange}
               >
                 Login

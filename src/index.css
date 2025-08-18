@@ -1,1 +1,62 @@
 @import "tailwindcss";
+
+/* Additional responsive utilities and global styles */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+/* Mobile-first responsive font scaling - keep mobile smaller for readability */
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+/* Ensure smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Responsive image utility */
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Mobile-friendly touch targets */
+@media (max-width: 768px) {
+
+    button,
+    .clickable {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
+
+/* Prevent horizontal scroll on mobile */
+body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+/* Container query for cards */
+.card-container {
+    container-type: inline-size;
+}
+
+/* Safe area for mobile devices with notches */
+@supports(padding: max(0px)) {
+    .safe-area-top {
+        padding-top: max(1rem, env(safe-area-inset-top));
+    }
+
+    .safe-area-bottom {
+        padding-bottom: max(1rem, env(safe-area-inset-bottom));
+    }
+}
